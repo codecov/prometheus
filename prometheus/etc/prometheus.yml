@@ -17,22 +17,6 @@ scrape_configs:
   static_configs:
   - targets:
     - localhost:9090
-- job_name: statsd
-  scrape_interval: 15s
-  scrape_timeout: 10s
-  metrics_path: /metrics
-  scheme: http
-  static_configs:
-  - targets:
-    - statsd:9102
-- job_name: grafana
-  scrape_interval: 15s
-  scrape_timeout: 10s
-  metrics_path: /metrics
-  scheme: http
-  static_configs:
-  - targets:
-    - grafana:3000
 - job_name: traefik
   scrape_interval: 15s
   scrape_timeout: 10s
@@ -41,3 +25,11 @@ scrape_configs:
   static_configs:
   - targets:
     - traefik:8080
+- job_name: engine
+  scrape_interval: 15s
+  scrape_timeout: 10s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+  - targets:
+    - engine:8085
