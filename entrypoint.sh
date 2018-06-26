@@ -1,3 +1,3 @@
 #!/bin/sh
 
-prometheus --config.file="/etc/prometheus/prometheus.yml" "$@"
+prometheus --web.listen-address ":9090" --config.file="/etc/prometheus/prometheus.yml" "$@"
